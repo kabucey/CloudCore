@@ -75,7 +75,7 @@ class CoreDataRelationship {
         guard let record = try managedObject.restoreRecordWithSystemFields(for: scope) else {
 			// That is possible if method is called before all managed object were filled with recordData
 			// That may cause possible reference corruption (Core Data -> iCloud), but it is not critical
-			assertionFailure("Managed Object doesn't have stored record information, should be reported as a framework bug")
+			print("Managed Object doesn't have stored record information, should be reported as a framework bug")
 			return nil
 		}
 		
