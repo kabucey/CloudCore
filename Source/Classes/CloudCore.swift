@@ -120,6 +120,11 @@ open class CloudCore {
 		
 		// FIXME: unsubscribe
 	}
+    
+    /// Forces a CloudCore sync
+    public static func forceSync() {
+        _ = coreDataObserver?.processChanges()
+    }
 	
 	// MARK: Fetchers
 	
